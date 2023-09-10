@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# install CodeDeploy agent
+sudo apt-get -y update
+sudo apt-get -y install ruby
+sudo apt-get -y install wget
+cd /home/ubuntu
+wget https://aws-codedeploy-us-east-1.s3.amazonaws.com/latest/install
+sudo chmod +x ./install 
+sudo ./install auto
+
 # Stop and remove the previous Docker container (if it exists)
 if docker ps -a | grep -q "myapp_container"; then
   docker stop myapp_container
