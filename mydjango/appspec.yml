@@ -4,7 +4,11 @@ files:
   - source: /
     destination: /home/ubuntu/django_demo/mydjango
 hooks:
+  ApplicationStop:
+      - location: scripts/application_stop.sh
   BeforeInstall:
       - location: scripts/before_install.sh
   AfterInstall:
       - location: scripts/after_install.sh
+  ApplicationStart:
+      - location: scripts/application_start.sh    
